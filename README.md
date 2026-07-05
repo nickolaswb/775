@@ -15,12 +15,9 @@ nums[i] > nums[i + 1]
 
 Return true if the number of global inversions is equal to the number of local inversions.
 
- 
-
 Example 1:
 
 Input: nums = [1,0,2]
-
 Output: true
 
 Explanation: There is 1 global inversion and 1 local inversion.
@@ -28,7 +25,6 @@ Explanation: There is 1 global inversion and 1 local inversion.
 Example 2:
 
 Input: nums = [1,2,0]
-
 Output: false
 
 Explanation: There are 2 global inversions and 1 local inversion.

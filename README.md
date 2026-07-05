@@ -15,6 +15,8 @@ nums[i] > nums[i + 1]
 
 Return true if the number of global inversions is equal to the number of local inversions.
 
+
+
 Example 1:
 
 Input: nums = [1,0,2]

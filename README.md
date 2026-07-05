@@ -28,7 +28,11 @@ Explanation: There are 2 global inversions and 1 local inversion.
 Constraints:
 
 n == nums.length
+
 1 <= n <= 105
+
 0 <= nums[i] < n
+
 All the integers of nums are unique.
+
 nums is a permutation of all the numbers in the range [0, n - 1].

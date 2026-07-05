@@ -221,17 +221,20 @@ int ContarMenores( no_t *raiz, int valor ) {
     return count;
 }
 
-no_t *Buscar( no_t *raiz, int valor ) {
-    while ( raiz ) {
-        if ( valor == raiz->valor ) {
-            return raiz;
-        } else if ( valor < raiz->valor ) {
-            raiz = raiz->esq;
+int Predecessor( no_t *raiz, int valor ) {
+    int pred = -1;
+    no_t *atual = raiz;
+    
+    while ( atual ) {
+        if ( valor <= atual->valor ) {
+            atual = atual->esq;
         } else {
-            raiz = raiz->dir;
+            pred = atual->valor;
+            atual = atual->dir;
         }
     }
-    return NULL;
+    
+    return pred;
 }
 
 /*
@@ -249,9 +252,9 @@ bool isIdealPermutation( int *nums, int numsSize ) {
     
     for ( int i = numsSize - 1; i >= 0; i-- ) {
         global = global + ContarMenores( raiz, nums[i] );
-        if ( i + 1 < numsSize ) {
-            no_t *prox_no = Buscar( raiz, nums[i + 1] );
-            if ( prox_no && nums[i] > nums[i + 1] ) {   
+       if ( i + 1 < numsSize ) {
+            int pred = Predecessor( raiz, nums[i] );
+            if ( pred == nums[i + 1] ) {
                 local++;
             }
         }  

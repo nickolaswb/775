@@ -257,7 +257,6 @@ bool isIdealPermutation( int *nums, int numsSize ) {
         }  
         raiz = Inserir_r( raiz, nums[i] );
     }
-    Liberar_r( raiz );
     return global == local;
 }
 
